@@ -27,15 +27,41 @@ const Projects = () => {
   const cardsRef = useRef(null)
 
   const projects = [
+     {
+      title: 'NASA APOD Explorer',
+      description: 'Fetches NASA Astronomy Picture of the Day with date-based search, image viewer, and API integration. mplemented a secure Express.js backend with LRU caching to minimize external API calls and improve application performance. ',
+      tech: ['React.js', 'Axios', 'NASA API'],
+      icon: '🚀',
+      github: 'https://github.com/bright-prajwal/SpaceX-Mission-Explorer-',
+      demo: '#',
+    },
     {
       title: 'Water Potability Prediction System',
       description: 'ML-based model to predict drinking water safety using chemical, physical & biological parameters. Achieved 99% accuracy with XGBoost and added Power BI dashboards.',
       tech: ['Python', 'R', 'Power BI', 'XGBoost', 'Machine Learning'],
       icon: '💧',
-      github: '#',
+      github: 'https://github.com/bright-prajwal/Water-Potability-using-a-Machine-learning-Approach-',
+      demo: '#',
+    },
+  
+   
+    {
+      title: 'Airbnb Inspired Full-Stack Web Application',
+      description: 'A hotel booking UI clone with search, filters, responsive design, and fully functional front-end interface.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'EJS','React'],
+      icon: '🏨',
+      github: 'https://github.com/bright-prajwal/Airbnb-Inspired-Full-Stack-Web-Application',
       demo: '#',
     },
     {
+      title: 'Air Quality Prediction Using ML',
+      description: 'ML-based model to predict drinking water safety using chemical, physical & biological parameters. Achieved 99% accuracy with XGBoost and added Power BI dashboards.',
+      tech: ['Python', 'R', 'Power BI', 'XGBoost', 'Machine Learning'],
+      icon: '🌫️',
+      github: 'https://github.com/bright-prajwal/Air-Quality-Prediction-Using-Machine-Learning',
+      demo: '#',
+    },
+     {
       title: 'Smart Contact Manager',
       description: 'Secure contact management system with authentication, role-based access, CRUD operations, and data storage.',
       tech: ['Java', 'Spring Boot', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
@@ -44,29 +70,14 @@ const Projects = () => {
       demo: '#',
     },
     {
-      title: 'OYO Clone Website',
-      description: 'A hotel booking UI clone with search, filters, responsive design, and fully functional front-end interface.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      icon: '🏨',
-      github: '#',
-      demo: '#',
-    },
-    {
       title: 'Expense Tracker (Django)',
       description: 'Personal finance management app with daily expense logging, category management, reporting, and admin interface.',
       tech: ['Django', 'SQLite', 'Bootstrap', 'Python'],
       icon: '💰',
-      github: '#',
+      github: 'https://github.com/bright-prajwal/DevOps-Project-ICCS-Expense-Tracker- ',
       demo: '#',
     },
-    {
-      title: 'NASA APOD Explorer',
-      description: 'Fetches NASA Astronomy Picture of the Day with date-based search, image viewer, and API integration.',
-      tech: ['React.js', 'Axios', 'NASA API'],
-      icon: '🚀',
-      github: '#',
-      demo: '#',
-    },
+   
   ]
 
   useEffect(() => {

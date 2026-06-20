@@ -164,10 +164,10 @@ const Hero = () => {
             {/* Social Links */}
             <div ref={socialRef} className="flex justify-center lg:justify-start gap-3 sm:gap-4 pt-4">
               {[
-                { icon: FaGithub, href: 'https://github.com' },
-                { icon: FaLinkedin, href: 'https://linkedin.com' },
-                { icon: FaTwitter, href: 'https://twitter.com' },
-                { icon: FaInstagram, href: 'https://instagram.com' },
+                { icon: FaGithub, href: 'https://github.com/bright-prajwal' },
+                { icon: FaLinkedin, href: 'https://www.linkedin.com/in/prajwalhon' },
+                // { icon: FaTwitter, href: 'https://twitter.com' },
+                // { icon: FaInstagram, href: 'https://instagram.com' },
               ].map((social, index) => {
                 const Icon = social.icon
                 return (
