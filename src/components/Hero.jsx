@@ -1,17 +1,17 @@
-import { useEffect, useRef } from 'react'
-import { FiDownload, FiMail, FiBriefcase } from 'react-icons/fi'
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { useEffect, useRef } from "react";
+import { FiDownload, FiMail, FiBriefcase } from "react-icons/fi";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Hero = () => {
-  const heroRef = useRef(null)
-  const logoRef = useRef(null)
-  const greetingRef = useRef(null)
-  const nameRef = useRef(null)
-  const roleRef = useRef(null)
-  const descRef = useRef(null)
-  const buttonsRef = useRef(null)
-  const socialRef = useRef(null)
-  const illustrationRef = useRef(null)
+  const heroRef = useRef(null);
+  const logoRef = useRef(null);
+  const greetingRef = useRef(null);
+  const nameRef = useRef(null);
+  const roleRef = useRef(null);
+  const descRef = useRef(null);
+  const buttonsRef = useRef(null);
+  const socialRef = useRef(null);
+  const illustrationRef = useRef(null);
 
   useEffect(() => {
     // Simple fade-in animations without GSAP
@@ -21,80 +21,87 @@ const Hero = () => {
       nameRef.current,
       roleRef.current,
       descRef.current,
-    ].filter(Boolean)
+    ].filter(Boolean);
 
     elements.forEach((el, index) => {
       if (el) {
-        el.style.opacity = '0'
-        el.style.transform = 'translateY(20px)'
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
         setTimeout(() => {
-          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
-          el.style.opacity = '1'
-          el.style.transform = 'translateY(0)'
-        }, index * 100)
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }, index * 100);
       }
-    })
+    });
 
     // Buttons animation
     if (buttonsRef.current) {
       Array.from(buttonsRef.current.children).forEach((btn, index) => {
-        btn.style.opacity = '0'
-        btn.style.transform = 'scale(0.8)'
-        setTimeout(() => {
-          btn.style.transition = 'opacity 0.5s ease, transform 0.5s ease'
-          btn.style.opacity = '1'
-          btn.style.transform = 'scale(1)'
-        }, 1000 + index * 100)
-      })
+        btn.style.opacity = "0";
+        btn.style.transform = "scale(0.8)";
+        setTimeout(
+          () => {
+            btn.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            btn.style.opacity = "1";
+            btn.style.transform = "scale(1)";
+          },
+          1000 + index * 100,
+        );
+      });
     }
 
     // Social icons animation
     if (socialRef.current) {
       Array.from(socialRef.current.children).forEach((icon, index) => {
-        icon.style.opacity = '0'
-        setTimeout(() => {
-          icon.style.transition = 'opacity 0.5s ease'
-          icon.style.opacity = '1'
-        }, 1200 + index * 100)
-      })
+        icon.style.opacity = "0";
+        setTimeout(
+          () => {
+            icon.style.transition = "opacity 0.5s ease";
+            icon.style.opacity = "1";
+          },
+          1200 + index * 100,
+        );
+      });
     }
 
     // Illustration animation
     if (illustrationRef.current) {
-      illustrationRef.current.style.opacity = '0'
-      illustrationRef.current.style.transform = 'scale(0.5)'
+      illustrationRef.current.style.opacity = "0";
+      illustrationRef.current.style.transform = "scale(0.5)";
       setTimeout(() => {
-        illustrationRef.current.style.transition = 'opacity 1s ease, transform 1s ease'
-        illustrationRef.current.style.opacity = '1'
-        illustrationRef.current.style.transform = 'scale(1)'
-      }, 500)
+        illustrationRef.current.style.transition =
+          "opacity 1s ease, transform 1s ease";
+        illustrationRef.current.style.opacity = "1";
+        illustrationRef.current.style.transform = "scale(1)";
+      }, 500);
     }
 
     // Scroll indicator animation
-    const scrollIndicator = document.querySelector('.scroll-indicator')
+    const scrollIndicator = document.querySelector(".scroll-indicator");
     if (scrollIndicator) {
       setInterval(() => {
-        scrollIndicator.style.transform = 'translateY(10px)'
+        scrollIndicator.style.transform = "translateY(10px)";
         setTimeout(() => {
-          scrollIndicator.style.transform = 'translateY(0)'
-        }, 1500)
-      }, 3000)
+          scrollIndicator.style.transform = "translateY(0)";
+        }, 1500);
+      }, 3000);
     }
-  }, [])
+  }, []);
 
   const scrollToContact = () => {
-    const element = document.querySelector('#contact')
+    const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   const scrollToProjects = () => {
-    const element = document.querySelector('#projects')
+    const element = document.querySelector("#projects");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   return (
     <section
@@ -107,19 +114,24 @@ const Hero = () => {
           {/* Left Side - Text Content */}
           <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
             {/* Logo/Initials */}
-            <div ref={logoRef} className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8">
+            <div
+              ref={logoRef}
+              className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8"
+            >
               PH
             </div>
 
             {/* Greeting */}
             <div ref={greetingRef}>
-              <p className="text-purple-600 dark:text-purple-400 text-base sm:text-lg md:text-xl mb-2">Hello, I'm</p>
+              <p className="text-purple-600 dark:text-purple-400 text-base sm:text-lg md:text-xl mb-2">
+                Hello, I'm
+              </p>
             </div>
 
             {/* Name */}
             <div ref={nameRef}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
-                <span className="text-gray-900 dark:text-white">Prajwal</span>{' '}
+                <span className="text-gray-900 dark:text-white">Prajwal</span>{" "}
                 <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 dark:from-purple-400 dark:via-pink-500 dark:to-purple-600 bg-clip-text text-transparent">
                   Hon
                 </span>
@@ -129,8 +141,9 @@ const Hero = () => {
             {/* Role */}
             <div ref={roleRef}>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-4 sm:mb-6">
-                Full Stack Developer 
-              </h2>  {/* 
+                Full Stack Developer
+              </h2>{" "}
+              {/* 
             Full Stack Developer | .NET Developer | Java Developer | Python Developer
             */}
             </div>
@@ -138,13 +151,17 @@ const Hero = () => {
             {/* Description */}
             <div ref={descRef}>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                I create elegant solutions to complex problems through clean, efficient, and maintainable code.
-                Specializing in full-stack development with expertise in modern technologies.
+                I create elegant solutions to complex problems through clean,
+                efficient, and maintainable code. Specializing in full-stack
+                development with expertise in modern technologies.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div ref={buttonsRef} className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-4">
+            <div
+              ref={buttonsRef}
+              className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-4"
+            >
               <button
                 onClick={scrollToProjects}
                 className="px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl shadow-purple-500/50 flex items-center gap-2 text-sm sm:text-base"
@@ -162,14 +179,20 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div ref={socialRef} className="flex justify-center lg:justify-start gap-3 sm:gap-4 pt-4">
+            <div
+              ref={socialRef}
+              className="flex justify-center lg:justify-start gap-3 sm:gap-4 pt-4"
+            >
               {[
-                { icon: FaGithub, href: 'https://github.com/bright-prajwal' },
-                { icon: FaLinkedin, href: 'https://www.linkedin.com/in/prajwalhon' },
+                { icon: FaGithub, href: "https://github.com/bright-prajwal" },
+                {
+                  icon: FaLinkedin,
+                  href: "https://www.linkedin.com/in/prajwalhon",
+                },
                 // { icon: FaTwitter, href: 'https://twitter.com' },
                 // { icon: FaInstagram, href: 'https://instagram.com' },
               ].map((social, index) => {
-                const Icon = social.icon
+                const Icon = social.icon;
                 return (
                   <a
                     key={index}
@@ -180,7 +203,7 @@ const Hero = () => {
                   >
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
-                )
+                );
               })}
             </div>
           </div>
@@ -193,10 +216,16 @@ const Hero = () => {
 
               {/* Placeholder for illustration */}
               <div className="relative z-10 flex items-center justify-center">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-purple-400/20 to-pink-500/20 border-4 border-purple-500/30 flex items-center justify-center backdrop-blur-sm">
-                  <div className="text-8xl">👨‍💻</div>
-                  {/* <img src={heroImage} alt="Hero" className="w-full h-full object-cover" /> */}
-                </div>
+                {/* <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-purple-400/20 to-pink-500/20 border-4 border-purple-500/30 flex items-center justify-center backdrop-blur-sm"> */}
+                {/* <div className="text-8xl"> */}
+                <img
+                  className="w-100 h-104 md:w-80 md:h-90 rounded-full bg-gradient-to-br from-purple-400/20 to-pink-500/20 border-4 border-purple-500/30 flex items-center justify-center backdrop-blur-sm"
+                  src="my img.jpg"
+                  alt="boy in a jacket"
+                />
+                {/* </div> */}
+                {/* <img src={heroImage} alt="Hero" className="w-full h-full object-cover" /> */}
+                {/* </div> */}
               </div>
             </div>
           </div>
@@ -204,7 +233,9 @@ const Hero = () => {
 
         {/* Scroll Down Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center scroll-indicator">
-          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-2">Scroll Down</p>
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-2">
+            Scroll Down
+          </p>
           <svg
             className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600 dark:text-purple-400 mx-auto"
             fill="none"
@@ -219,7 +250,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
